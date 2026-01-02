@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Fitness Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="foodSsgestions.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="img">
+                <img src="https://t4.ftcdn.net/jpg/04/35/09/79/240_F_435097927_ZQM5LsTwkXQtIDNT3mpAvnol42bC7phW.jpg" alt="logo">
+            </div>
+        </div>
+        <h1>Health & Fitness Tracker</h1>
+        <div class="user-profile">
+            <img src="https://via.placeholder.com/40" alt="User" id="user-avatar">
+            <span id="username">Guest</span>
+            <button id="login-btn" class="auth-btn">Login</button>
+            <button id="logout-btn" class="auth-btn">Logout</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <div id="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+    
+            <nav class="sidebar">
+                <ul>
+                    <li class="active" data-tab="dashboard"><i class="fas fa-home"></i> Dashboard</li>
+                    <li data-tab="hydration"><i class="fas fa-tint"></i> Hydration</li>
+                    <li data-tab="nutrition"><i class="fas fa-utensils"></i> Nutrition</li>
+                    <li data-tab="workouts"><i class="fas fa-dumbbell"></i> Workouts</li>
+                    <li data-tab="food-suggestions"><i class="fas fa-utensil-spoon"></i> Food Suggestions</li>
+                    <li data-tab="profile"><i class="fas fa-user"></i> Profile</li>
+                </ul>
+            </nav>
+    
+            <main class="main-content">
+                <!-- Dashboard Tab -->
+                <div class="tab-content active" id="dashboard">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <h3>Daily Water Intake</h3>
+                            <div class="water-progress">
+                                <div class="progress-circle" id="water-progress">
+                                    <span>0%</span>
+                                </div>
+                                <div class="water-details">
+                                    <span id="water-consumed">0</span>/<span id="water-goal">8</span> cups
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Calories Today</h3>
+                            <div class="calories-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="calories-progress"></div>
+                                </div>
+                                <div class="calories-details">
+                                    <span id="calories-consumed">0</span>/<span id="calories-goal">2000</span> kcal
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Activity Level</h3>
+                            <div class="activity-level">
+                                <div class="activity-meter">
+                                    <div class="meter-fill" id="activity-meter"></div>
+                                </div>
+                                <span id="activity-text">Sedentary</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="recommendations-container">
+                        <h2>Today's Recommendations</h2>
+                        <div class="recommendations-grid">
+                            <div class="recommendation-card">
+                                <i class="fas fa-tint"></i>
+                                <h3>Hydration</h3>
+                                <p id="hydration-recommendation">Drink at least 8 cups of water today</p>
+                            </div>
+                            <div class="recommendation-card">
+                                <i class="fas fa-utensils"></i>
+                                <h3>Nutrition</h3>
+                                <p id="nutrition-recommendation">Include more leafy greens in your meals</p>
+                            </div>
+                            <div class="recommendation-card">
+                                <i class="fas fa-dumbbell"></i>
+                                <h3>Workout</h3>
+                                <p id="workout-recommendation">30 minutes of cardio recommended</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Hydration Tab -->
+                <div class="tab-content" id="hydration">
+                    <h2>Hydration Tracker</h2>
+                    <div class="hydration-container">
+                        <div class="hydration-input">
+                            <label for="water-amount">Add Water Intake (cups):</label>
+                            <input type="number" id="water-amount" min="1" max="20" value="1">
+                            <button id="add-water">Add</button>
+                        </div>
+                        <div class="hydration-history">
+                            <h3>Today's Intake</h3>
+                            <ul id="water-log"></ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Nutrition Tab -->
+                <div class="tab-content" id="nutrition">
+                    <h2>Nutrition Tracker</h2>
+                    <div class="nutrition-container">
+                        <div class="meal-input">
+                            <h3>Add Meal</h3>
+                            <select id="meal-type">
+                                <option value="breakfast">Breakfast</option>
+                                <option value="lunch">Lunch</option>
+                                <option value="dinner">Dinner</option>
+                                <option value="snack">Snack</option>
+                            </select>
+                            <input type="text" id="meal-name" placeholder="Meal name">
+                            <input type="number" id="meal-calories" placeholder="Calories">
+                            <button id="add-meal">Add Meal</button>
+                        </div>
+                        <div class="meal-history">
+                            <h3>Today's Meals</h3>
+                            <div class="meal-tabs">
+                                <button class="meal-tab active" data-meal="all">All</button>
+                                <button class="meal-tab" data-meal="breakfast">Breakfast</button>
+                                <button class="meal-tab" data-meal="lunch">Lunch</button>
+                                <button class="meal-tab" data-meal="dinner">Dinner</button>
+                                <button class="meal-tab" data-meal="snack">Snack</button>
+                            </div>
+                            <ul id="meal-log"></ul>
+                        </div>
+                    </div>
+                </div>
+                
+    
+                <!-- Workouts Tab -->
+                <div class="tab-content" id="workouts">
+                    <h2>Workout Planner</h2>
+                    <div class="workouts-container">
+                        <div class="workout-recommendation">
+                            <h3>Recommended Workout</h3>
+                            <div id="recommended-workout">
+                                <p>Based on your profile, we recommend:</p>
+                                <ul id="workout-plan"></ul>
+                            </div>
+                            <button id="start-workout">Start Workout</button>
+                        </div>
+                        <div class="workout-history">
+                            <h3>Recent Workouts</h3>
+                            <ul id="workout-log"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food Suggestions Tab -->
+<div class="tab-content" id="food-suggestions">
+    <div class="food-header">
+        <h2><i class="fas fa-utensils"></i> Indian Food Suggestions</h2>
+        <div class="search-container">
+            <input type="text" id="food-search" placeholder="Search Indian dishes...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </div> 
+    
+    
+    <div class="food-suggestions-container">
+        <div class="controls-bar">
+            <div class="filter-section">
+                <h3><i class="fas fa-filter"></i> Filters</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-diet="all">All</button>
+                    <button class="filter-btn" data-diet="vegetarian">Vegetarian</button>
+                    <button class="filter-btn" data-diet="vegan">Vegan</button>
+                    <button class="filter-btn" data-diet="low-carb">Low Carb</button>
+                    <button class="filter-btn" data-diet="high-protein">High Protein</button>
+                    <button class="filter-btn" data-diet="keto">Keto</button>
+                </div>
+            </div>
+            
+            <div class="sort-section">
+                <label for="sort-select"><i class="fas fa-sort"></i> Sort By:</label>
+                <select id="sort-select">
+                    <option value="popularity">Popularity</option>
+                    <option value="time">Cooking Time</option>
+                    <option value="calories">Calories</option>
+                    <option value="protein">Protein Content</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="meal-suggestions">
+            <div class="stats-bar">
+                <span id="results-count">Showing 0 results</span>
+                <div class="loading-spinner" id="loading-spinner"></div>
+            </div>
+            
+            <div class="meal-grid" id="meal-grid">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            
+            <div class="pagination">
+                <button class="page-btn" id="prev-page"><i class="fas fa-chevron-left"></i></button>
+                <span id="current-page">1</span>
+                <button class="page-btn" id="next-page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Detail Modal -->
+    <div class="recipe-modal" id="recipe-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+                <!-- Profile Tab -->
+                <div class="tab-content" id="profile">
+                    <h2>User Profile</h2>
+                    <div class="profile-container">
+                        <div class="profile-form">
+                            <h3>Personal Information</h3>
+                            <div class="form-group">
+                                <label for="profile-name">Name:</label>
+                                <input type="text" id="profile-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-age">Age:</label>
+                                <input type="number" id="profile-age">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-weight">Weight (kg):</label>
+                                <input type="number" id="profile-weight">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-height">Height (cm):</label>
+                                <input type="number" id="profile-height">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-activity">Activity Level:</label>
+                                <select id="profile-activity">
+                                    <option value="sedentary">Sedentary</option>
+                                    <option value="light">Lightly Active</option>
+                                    <option value="moderate">Moderately Active</option>
+                                    <option value="active">Active</option>
+                                    <option value="very-active">Very Active</option>
+                                </select>
+                            </div>
+                            <button id="save-profile">Save Profile</button>
+                        </div>
+                        <div class="profile-stats">
+                            <h3>Health Stats</h3>
+                            <div class="stat-item">
+                                <span>BMI:</span>
+                                <span id="bmi-value">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Daily Calorie Goal:</span>
+                                <span id="calorie-goal-value">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span>Water Goal:</span>
+                                <span id="water-goal-value">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+    
+            <div class="ai-assistant">
+                <button id="ai-button"><i class="fas fa-robot"></i></button>
+                <div class="ai-chat" id="ai-chat">
+                    <div class="ai-header">
+                        <h3>Fitness Assistant</h3>
+                        <button id="close-chat"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="ai-messages" id="ai-messages"></div>
+                    <div class="ai-input">
+                        <input type="text" id="ai-question" placeholder="Ask me anything about health or fitness...">
+                        <button id="ai-send"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Login Modal -->
+            <div class="login-modal" id="login-modal">
+                <div class="login-content">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email:</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password:</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit">Login</button>
+                        <p class="register-link">Don't have an account? <a href="#" id="show-register">Register</a></p>
+                    </form>
+                </div>
+                
+                <div class="register-content" id="register-content">
+                    <h2>Register</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Name:</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email:</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password:</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit">Register</button>
+                        <p class="login-link">Already have an account? <a href="#" id="show-login">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="foodSugestion.js"></script>
+</body>
+</html>

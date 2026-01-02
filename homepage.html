@@ -1,0 +1,696 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Health & Fitness Tracker | Your Personalized Wellness Companion</title>
+  <meta name="description" content="Track your fitness journey with AI-powered recommendations for hydration, nutrition, and workouts tailored just for you.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #4299e1 0%, #38b2ac 100%);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header with Navigation -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      <div class="flex items-center space-x-3">
+        <div class="img" style="width: 100px;">
+            <img src="https://t4.ftcdn.net/jpg/04/35/09/79/240_F_435097927_ZQM5LsTwkXQtIDNT3mpAvnol42bC7phW.jpg" alt="logo">
+        </div>
+       
+        <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+            Health & Fitness Tracker
+        </h1>
+      </div>
+      <nav class="hidden md:flex space-x-10 font-medium text-gray-700">
+        <a class="hover:text-blue-600 transition duration-300 flex items-center" href="#features">
+          <i class="fas fa-star mr-2 text-blue-500"></i> Features
+        </a>
+        <a class="hover:text-blue-600 transition duration-300 flex items-center" href="#how-it-works">
+          <i class="fas fa-cogs mr-2 text-green-500"></i> How It Works
+        </a>
+        <a class="hover:text-blue-600 transition duration-300 flex items-center" href="#testimonials">
+          <i class="fas fa-quote-left mr-2 text-purple-500"></i> Testimonials
+        </a>
+        <a class="hover:text-blue-600 transition duration-300 flex items-center" href="#pricing">
+          <i class="fas fa-tag mr-2 text-red-500"></i> Pricing
+        </a>
+      </nav>
+      <div class="hidden md:block">
+        <button id="get-start" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 shadow-md">
+          Get Started
+        </button>
+      </div>
+      <button aria-label="Open menu" class="md:hidden text-gray-700 focus:outline-none" id="mobile-menu-button">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav aria-label="Mobile menu" class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50" href="#features">
+          <i class="fas fa-star mr-2 text-blue-500"></i> Features
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50" href="#how-it-works">
+          <i class="fas fa-cogs mr-2 text-green-500"></i> How It Works
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50" href="#testimonials">
+          <i class="fas fa-quote-left mr-2 text-purple-500"></i> Testimonials
+        </a>
+        <a class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50" href="#pricing">
+          <i class="fas fa-tag mr-2 text-red-500"></i> Pricing
+        </a>
+        <button class="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-full transition duration-300">
+          Get Started
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="md:flex items-center justify-between">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            Transform Your Health Journey with AI-Powered Insights
+          </h1>
+          <p class="text-xl mb-8 text-blue-100">
+            Personalized hydration, nutrition, and workout plans tailored to your unique body and goals.
+          </p>
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <button class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg">
+              Start Free Trial
+            </button>
+            <button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-full transition duration-300">
+              <i class="fas fa-play mr-2"></i> Watch Demo
+            </button>
+          </div>
+          <div class="mt-8 flex items-center">
+            <div class="flex -space-x-2">
+              <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+              <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+              <img class="w-10 h-10 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+            </div>
+            <div class="ml-4">
+              <p class="text-sm text-blue-100">Trusted by 50,000+ health enthusiasts</p>
+              <div class="flex items-center mt-1">
+                <i class="fas fa-star text-yellow-300"></i>
+                <i class="fas fa-star text-yellow-300"></i>
+                <i class="fas fa-star text-yellow-300"></i>
+                <i class="fas fa-star text-yellow-300"></i>
+                <i class="fas fa-star text-yellow-300"></i>
+                <span class="ml-2 text-sm">4.9/5 (2,483 reviews)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <img alt="HealthTrack Pro dashboard on multiple devices" class="rounded-xl shadow-2xl" src="https://storage.googleapis.com/a1aa/image/9e4c9943-96bc-4505-d910-f6d893e4d53f.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By Section -->
+  <section class="bg-gray-100 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-500 mb-8">TRUSTED BY LEADING FITNESS BRANDS</p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+        <img class="h-12 mx-auto opacity-60 hover:opacity-100 transition duration-300" src="https://logo.clearbit.com/nike.com" alt="Nike">
+        <img class="h-10 mx-auto opacity-60 hover:opacity-100 transition duration-300" src="https://logo.clearbit.com/fitnessfirst.com" alt="Fitness First">
+        <img class="h-14 mx-auto opacity-60 hover:opacity-100 transition duration-300" src="https://logo.clearbit.com/myfitnesspal.com" alt="MyFitnessPal">
+        <img class="h-12 mx-auto opacity-60 hover:opacity-100 transition duration-300" src="https://logo.clearbit.com/lesmills.com" alt="Les Mills">
+        <img class="h-10 mx-auto opacity-60 hover:opacity-100 transition duration-300" src="https://logo.clearbit.com/24hourfitness.com" alt="24 Hour Fitness">
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Comprehensive Health Tracking
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Everything you need to achieve your fitness goals in one powerful platform
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-tint text-blue-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Smart Hydration</h3>
+          <p class="text-gray-600 mb-4">
+            Our AI calculates your optimal water intake based on activity level, weather, and body metrics, with reminders to keep you on track.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Real-time dehydration alerts
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Caffeine/alcohol adjustment
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Electrolyte balance tracking
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-utensils text-green-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Nutrition Planning</h3>
+          <p class="text-gray-600 mb-4">
+            Personalized meal plans with macro tracking, grocery lists, and restaurant recommendations that fit your dietary needs.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> 50,000+ food database
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Allergen & preference filters
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Barcode scanner
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card bg-white p-8 rounded-xl shadow-lg transition duration-300">
+          <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-6">
+            <i class="fas fa-dumbbell text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Workout Intelligence</h3>
+          <p class="text-gray-600 mb-4">
+            Adaptive training programs with video demonstrations, form analysis, and recovery recommendations.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> 500+ exercise library
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Wearable integration
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Progress analytics
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          How HealthTrack Pro Works
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Your personalized health companion in just 3 simple steps
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">1</div>
+            <h3 class="text-xl font-bold text-gray-900">Set Your Profile</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Tell us about your health goals, dietary preferences, activity level, and any special considerations.
+          </p>
+          <img class="rounded-lg mt-4" src="https://storage.googleapis.com/a1aa/image/5c4ea607-e5af-41d0-5a41-0046bdb6be9d.jpg" alt="Profile setup">
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">2</div>
+            <h3 class="text-xl font-bold text-gray-900">Get Recommendations</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Our AI analyzes your data to create customized hydration, nutrition, and workout plans.
+          </p>
+          <img class="rounded-lg mt-4" src="https://storage.googleapis.com/a1aa/image/4d114f3d-7416-4758-b5f1-d21345f57681.jpg" alt="Recommendations">
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-6">
+            <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">3</div>
+            <h3 class="text-xl font-bold text-gray-900">Track & Improve</h3>
+          </div>
+          <p class="text-gray-600 mb-4">
+            Log your activities, see real-time progress, and get adaptive suggestions as you improve.
+          </p>
+          <img class="rounded-lg mt-4" src="https://storage.googleapis.com/a1aa/image/ec6bd1e6-cda3-4da6-f7c0-8e1f83f77068.jpg" alt="Tracking progress">
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg">
+          Start Your Journey Today
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gradient-to-r from-blue-50 to-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Success Stories
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Join thousands who transformed their health with HealthTrack Pro
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-4">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J.">
+            <div>
+              <h4 class="font-bold text-gray-900">Sarah J.</h4>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "I lost 28 pounds in 4 months with HealthTrack Pro's personalized meal plans. The hydration reminders were a game-changer - I never realized how dehydrated I was!"
+          </p>
+          <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-green-500 mr-2"></i> 12 months with HealthTrack Pro
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-4">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael T.">
+            <div>
+              <h4 class="font-bold text-gray-900">Michael T.</h4>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "As a busy executive, I needed efficient workouts. The AI trainer created 30-minute routines that got me in the best shape of my life."
+          </p>
+          <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-green-500 mr-2"></i> 8 months with HealthTrack Pro
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="flex items-center mb-4">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K.">
+            <div>
+              <h4 class="font-bold text-gray-900">Priya K.</h4>
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-star text-yellow-400"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic mb-4">
+            "The vegetarian meal plans tailored to my Indian palate were incredible. My energy levels doubled in just 3 weeks!"
+          </p>
+          <div class="flex items-center text-sm text-gray-500">
+            <i class="fas fa-check-circle text-green-500 mr-2"></i> 6 months with HealthTrack Pro
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Simple, Transparent Pricing
+        </h2>
+        <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+          Choose the plan that fits your health journey
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Basic Plan -->
+        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Starter</h3>
+          <p class="text-gray-600 mb-6">Perfect for beginners</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-gray-900">$9.99</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Basic hydration tracking
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Simple meal suggestions
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> 20 workout routines
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i class="fas fa-times text-red-400 mr-2"></i> No AI recommendations
+            </li>
+            <li class="flex items-center text-gray-400">
+              <i class="fas fa-times text-red-400 mr-2"></i> Basic progress tracking
+            </li>
+          </ul>
+          <button class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-4 rounded-full transition duration-300">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="bg-white p-8 rounded-xl border-2 border-blue-500 shadow-lg relative">
+          <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+            MOST POPULAR
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Pro</h3>
+          <p class="text-gray-600 mb-6">For serious health enthusiasts</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-gray-900">$19.99</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Advanced hydration tracking
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Personalized meal plans
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> 200+ workout routines
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> AI recommendations
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Detailed analytics
+            </li>
+          </ul>
+          <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-full transition duration-300">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Family Plan -->
+        <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Family</h3>
+          <p class="text-gray-600 mb-6">For households up to 5 members</p>
+          <div class="mb-6">
+            <span class="text-4xl font-extrabold text-gray-900">$29.99</span>
+            <span class="text-gray-600">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> All Pro features
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Up to 5 family members
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Family health dashboard
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Shared meal planning
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-2"></i> Family challenges
+            </li>
+          </ul>
+          <button class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-4 rounded-full transition duration-300">
+            Get Started
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center text-gray-600">
+        <p>All plans come with a 30-day money-back guarantee. No contracts, cancel anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="gradient-bg text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold mb-6">Ready to Transform Your Health?</h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Join over 50,000 users who achieved their fitness goals with HealthTrack Pro
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <button class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg">
+          Start Your Free 14-Day Trial
+        </button>
+        <button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-full transition duration-300">
+          <i class="fas fa-phone-alt mr-2"></i> Book a Demo
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="mt-4 text-xl text-gray-600">
+          Everything you need to know about HealthTrack Pro
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 focus:outline-none" id="faq1-button">
+            <span>How does the AI create personalized recommendations?</span>
+            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq1-icon"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden" id="faq1-content">
+            Our AI analyzes your profile data (age, weight, activity level, goals), daily inputs (food, water, exercise), and progress over time. It compares this with millions of data points from similar users to generate recommendations that statistically produce the best results for your profile.
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 focus:outline-none" id="faq2-button">
+            <span>Can I use HealthTrack Pro with my fitness wearable?</span>
+            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq2-icon"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden" id="faq2-content">
+            Yes! We integrate with Apple Health, Google Fit, Fitbit, Garmin, and most major wearables. Your activity data syncs automatically to provide more accurate recommendations and progress tracking.
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 focus:outline-none" id="faq3-button">
+            <span>What if I have dietary restrictions or allergies?</span>
+            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq3-icon"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden" id="faq3-content">
+            During setup, you can specify any dietary restrictions (vegetarian, vegan, gluten-free, etc.), allergies (nuts, dairy, etc.), and foods you dislike. Our AI will exclude these from all recommendations while ensuring you still get balanced nutrition.
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <button class="flex justify-between items-center w-full text-left font-semibold text-gray-900 focus:outline-none" id="faq4-button">
+            <span>How often are the workout plans updated?</span>
+            <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300" id="faq4-icon"></i>
+          </button>
+          <div class="mt-4 text-gray-600 hidden" id="faq4-content">
+            Workout plans adapt weekly based on your progress and feedback. The exercise library is updated monthly with new routines developed by our certified trainers. You'll never plateau with constantly evolving challenges.
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600">Still have questions? <a href="#" class="text-blue-600 hover:underline">Contact our support team</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Column 1 -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition duration-300">Features</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Pricing</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Apps</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Integrations</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition duration-300">Blog</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Guides</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Research</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white transition duration-300">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Press</a></li>
+            <li><a href="#" class="hover:text-white transition duration-300">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Connect With Us</h3>
+          <div class="flex space-x-4 mb-6">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <p class="text-sm">
+            Subscribe to our newsletter for health tips and updates
+          </p>
+          <div class="mt-4 flex">
+            <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 md:mb-0">
+          <img alt="HealthTrack Pro logo" class="w-8 h-8 mr-2" src="https://storage.googleapis.com/a1aa/image/da48ec9e-d017-4365-dcb4-e149fb01ca85.jpg">
+          <span class="text-white font-semibold">Health & Fitness Tracker</span>
+        </div>
+        <div class="text-sm">
+          <span class="block md:inline-block mb-2 md:mb-0 md:mr-6">© 2025 Health & Fitness Tracker. All rights reserved.</span>
+          <a href="#" class="hover:text-white transition duration-300 md:mr-6">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition duration-300 md:mr-6">Terms of Service</a>
+          <a href="#" class="hover:text-white transition duration-300">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const getStartButon = document.getElementById('get-start');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    getStartButon.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // FAQ accordion functionality
+    const faqButtons = ['faq1', 'faq2', 'faq3', 'faq4'];
+    
+    faqButtons.forEach(faq => {
+      const button = document.getElementById(`${faq}-button`);
+      const content = document.getElementById(`${faq}-content`);
+      const icon = document.getElementById(`${faq}-icon`);
+      
+      button.addEventListener('click', () => {
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
